@@ -1,0 +1,82 @@
+.hade{
+    border: 4px solid green;
+    border-radius: 60px;
+    padding: 10px 20px;
+    direction: rtl;
+    width: 90%;
+    margin: 30px auto;
+}
+.hadess{
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+}
+.hadess h2{
+    font-size: 40px;
+    margin-top: 0px;
+    text-align: center;
+    color: green;
+    font-family: "Tajawal", system-ui;
+    font-weight: bold;
+    font-style: normal;
+}
+.but{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: -10px 150px;
+    margin-bottom: 30px;
+}
+.but button{
+    padding:15px;
+    width: 200px;
+    font-size: 18px;
+    font-family: "Tajawal", system-ui;
+    border: none;
+    background-color: green;
+    color: #fff;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.but button:hover{
+    background-color: rgb(18, 175, 18);
+}
+@media screen and (max-width:480px){
+    .hade{
+        width: 80%;
+    } 
+    .but{
+        width: 80%;
+        margin: 10px auto;
+
+    }
+    .but button{
+        padding:10px 2px;
+        width: 100px;
+        font-size: 13px;
+    }
+    .hadess h2{
+        font-size: 16px;
+        margin-top: 0px;
+    }
+}
+@media screen and (min-width:481px) and (max-width:768px){
+    .hade{
+        width: 80%;
+    } 
+    .but{
+        width: 80%;
+        margin: 10px auto;
+
+    }
+    .but button{
+        padding:15px 2px;
+        width: 100px;
+        font-size: 14px;
+    }
+    .hadess h2{
+        font-size: 34px;
+        margin-top: 0px;
+    }
+}

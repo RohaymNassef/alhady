@@ -1,0 +1,51 @@
+.header{
+    background: url(../../images/1.jpg),no-repeat;
+    height:90vh;
+    width: 100%;
+    background-size: cover;
+    object-fit: contain;
+}
+.header-contant button{
+    padding: 20px;
+    width: 150px;
+    color: #fff;
+    background-color: transparent;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    font-size: 20px;
+    font-family: "Tajawal", system-ui;
+    font-weight: bold;
+    font-style: normal;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.header-contant button:hover{
+    background-color: black;
+    opacity: 0.7;
+    
+}
+.header-contant h2{
+    font-size: 50px;
+    color: #fff;
+    font-family: "Tajawal", system-ui;
+    font-weight: bold;
+    font-style: normal;
+}
+.header-contant{
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+@media screen and (max-width:480px){
+    .header-contant h2{
+        text-align: center;
+    }
+}
+@media screen and (min-width:481px) and (max-width:768px){
+    .header-contant h2{
+        text-align: center;
+    }
+}

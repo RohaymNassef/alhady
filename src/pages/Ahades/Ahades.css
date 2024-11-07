@@ -1,0 +1,102 @@
+.ahadess{
+    width: 90%;
+    margin: 50px auto ;
+    direction: rtl;
+}
+.ahadess h1{
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 45px;
+    color: green;
+}
+.ahades{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.ahades img{
+   max-width: 90%;
+    margin: auto;
+    display: block;
+    border-radius: 30px;
+}
+.ahad{
+    width: 22%;
+    height: 350px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 10px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.ahad:hover{
+    transform: scale(1.1);
+}
+.ahad h2{
+    text-align: center;
+    margin-top: 20px;
+    font-family: "Tajawal", system-ui;
+}
+@media screen and (max-width:480px){
+    .ahades{
+        flex-direction: column;
+    }
+    .ahadess h1{
+        font-size: 30px;
+    }
+    .ahad{
+        width: 90%;
+    }
+    .app-dark .ahades{
+        /* background-color: #000; */
+        width: 80%;
+        margin: 0 auto;
+    }
+    .app-dark .ahadess h1{
+        color: #fff;
+    }
+    .app-dark .link{
+        color: #fff;
+    }
+    .app-dark .hadess{
+        /* background-color: #000; */
+        color: #fff;
+    }
+    .app-dark .ahadess{
+        padding-bottom: 50px;
+    }
+    .ahad{
+        margin-bottom: 20px;
+    }
+}
+@media screen and (min-width:481px) and (max-width:768px){
+    .ahad{
+        width: 45%;
+    }
+    .ahad{
+        margin-bottom: 20px;
+    }
+    .ahadess h1{
+        font-size: 30px;
+    }
+    .app-dark .ahades{
+        /* background-color: #000; */
+        width: 80%;
+        margin: 0 auto;
+    }
+    .app-dark .ahadess{
+        padding-bottom: 50px;
+    }
+    .app-dark .ahadess h1{
+        color: #fff;
+    }
+    .app-dark .link{
+        color: #fff;
+    }
+    .app-dark .hadess{
+        /* background-color: #000; */
+        color: #fff;
+    }
+}

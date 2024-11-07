@@ -1,0 +1,164 @@
+.ayaat{
+    width: 70%;
+    border: 4px solid green;
+    margin: 30px auto;
+    text-align: center;
+    border-radius: 20px;
+    background-color: rgb(243, 235, 223);
+}
+.ayaats{
+    width: 100%;
+}
+.quran-conect{
+    display: flex;
+    margin-bottom: 20px;
+}
+.ayaat{
+    height:70vh;
+    overflow-y: scroll;
+}
+
+.ayaat::-webkit-scrollbar{
+    width: 9px;
+    /* background-color: green !important; */
+    border-radius: 10px;
+}
+.ayaat::-webkit-scrollbar-thumb{
+    background-color: green;
+    border-radius: 20px;
+    cursor:pointer;
+}
+.start{
+    text-align: center;
+}
+.ayat{
+    width: 90%;
+    margin: 50px auto;
+}
+.start{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 69%;
+    margin: auto;
+    margin-bottom: 10px;
+    padding: 20px;
+    border-radius: 20px; 
+    background-color: green;
+    color: #fff;
+    font-size: 22px;
+}
+.audios{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    background-color: green;
+    width: 70%;
+    padding: 10px;
+    border-radius: 20px;
+    margin: auto;
+}
+.audios audio{
+    width: 350px !important;
+    border-radius: 0px !important;
+    
+}
+.audioo{
+    border-radius: 10px;
+    background-color: #f1f3f4;
+}
+.select select{
+    padding: 15px 10px;
+    width:270px;
+    border-radius: 10px;
+    outline: none;
+    font-size: 18px;
+    font-family: "Tajawal", system-ui;
+    font-style: normal;
+    background-color: #f1f3f4;
+    cursor: pointer;
+}
+.ex button{
+    padding: 15px;
+    width: 200px;
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-family: "Tajawal", system-ui;
+}
+.selected{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 70%;
+    margin: auto;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 20px; 
+    background-color: green;
+}
+@media screen and (max-width:480px){
+    .ayaat{
+        width: 90%;
+    }
+    .start{
+        flex-direction: column;
+        gap: 20px;
+    }
+    .audios{
+        flex-direction: column;
+        
+    }
+    .audios audio{
+        width: 100% !important;
+    }
+    .audioo{
+        width: 90%;
+    }
+    .select{
+        width: 90%;
+    }
+    .select select{
+        width: 100% !important;
+    }
+    .ex{
+        width: 90%;
+    }
+    .ex button{
+        width: 100% !important;
+    }
+}
+@media screen and (min-width:481px) and (max-width:1024px){
+    .ayaat{
+        width: 90%;
+    }
+    .start{
+        flex-direction: column;
+        gap: 20px;
+    }
+    .audios{
+        flex-direction: column;
+        
+    }
+    .audios audio{
+        width: 100% !important;
+    }
+    .audioo{
+        width: 90%;
+    }
+    .select{
+        width: 90%;
+    }
+    .select select{
+        width: 100% !important;
+    }
+    .ex{
+        width: 90%;
+    }
+    .ex button{
+        width: 100% !important;
+    }
+}

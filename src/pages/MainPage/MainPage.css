@@ -1,0 +1,62 @@
+.mains{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    height: 83vh;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.main{
+    border: 3px solid green;
+    border-radius: 15px;
+    padding: 60px 0px;
+    width:100%;
+    text-align: center;
+    color: #000;
+    transition: 0.5s;
+    
+}
+.main:hover{
+    border: 3px solid yellowgreen;
+    color: yellowgreen;
+}
+.main > *{
+    margin: 10px;
+}
+.main h2{
+    font-size: 35px;
+    cursor: pointer;
+}
+.main-icon{
+    font-size: 35px;
+    cursor: pointer;
+    color: green;
+}
+.main-link{
+    text-decoration: none;
+    color: #000;
+}
+@media screen and (max-width:480px){
+    .mains{
+        flex-direction: column-reverse;
+        height: 120vh;
+        padding: 30px;
+        direction: rtl;
+    }
+    .app-dark .mainss{
+        height: 130vh;
+    }
+}
+@media screen and (min-width:481px) and (max-width:768px){
+    .mains{
+        flex-direction: column-reverse;
+        height: 120vh;
+        padding: 30px;
+        direction: rtl;
+    } 
+    .app-dark .mainss{
+        height: 130vh;
+    }
+}

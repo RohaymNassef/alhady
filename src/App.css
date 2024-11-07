@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    width: 80%;
+    margin: 100px auto;
+}
+
+.app-dark .navbar{
+    background-color: #222;
+}
+.app-dark .footer{
+    background-color: #222;
+}
+.app-dark .mainss{
+    background-color: #000;
+    height: 83vh;
+}
+.app-dark .main .main-icon{
+    color: #fff;
+}
+.app-dark .main .main-link{
+    color: #fff;
+}
+.app-dark .main{
+    background-color: #222;
+}
+.app-dark .azans{
+    background-color: #000;
+
+}
+.app-dark .azan{
+    margin: 0 auto;
+    color: #fff;
+}
+.app-dark .timeazan{
+    margin-bottom: 0px;
+}
+.app-dark .time{
+    background-color: #222;
+}
+.app-dark .qurans{
+    background-color: #000;
+    color: #fff;
+}
+.app-dark .quran{
+    margin: 0 auto;
+}
+.app-dark .quran-link{
+    color: #fff;
+}
+.app-dark .ayaats{
+    background-color: #000;
+    color: #fff;
+}
+.app-dark .ayat{
+    margin: 0px auto;
+}
+.app-dark .ayaat{
+    margin: 0 auto;
+}
+.app-dark .ahadess{
+    background-color: #222;
+    width: 100%;
+    margin: 0 auto;
+    color: #fff;
+}
+.app-dark .ahadess h1{
+    color: #fff;
+}
+.app-dark .link{
+    color: #fff;
+}
+.app-dark .hadess{
+    background-color: #000;
+    color: #fff;
+}
+.spiner{
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    height: 100vh;
+}   
