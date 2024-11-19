@@ -1,58 +1,70 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import "./SingleQuran.css";
-import axios from 'axios';
-import { Link, useParams } from 'react-router-dom';
+import axios from "axios";
+import { Link, useNavigate, useParams } from "react-router-dom";
+
 const SingleQuran = () => {
-   
-   const {number} = useParams();
-    const [data,setData] = useState([]);
-    const [info , setInfo] = useState("");
-    async function getQuran(){
-    const response = await axios.get(`https://api.alquran.cloud/v1/surah/${number}`);  
+  const { number } = useParams(); // رقم السورة من الـ URL
+  const [data, setData] = useState([]); // بيانات الآيات
+  const [info, setInfo] = useState(""); // معلومات السورة
+  const [audio, setAudio] = useState(""); // رابط الصوت
+  const [qur, setQur] = useState([]); // قائمة السور
+  const [numm, setNumm] = useState("1"); // رقم القارئ
+  const navigate = useNavigate();
+
+  // جلب بيانات السورة
+  async function getQuran() {
+    const response = await axios.get(`https://api.alquran.cloud/v1/surah/${number}`);
     setData(response.data.data.ayahs);
-      const info = response.data.data;
-      setInfo(info)
+    setInfo(response.data.data);
+  }
+
+  // جلب قائمة السور
+  async function getSurahList() {
+    const response = await axios.get(`https://api.alquran.cloud/v1/surah`);
+    setQur(response.data.data);
+  }
+
+  // جلب الصوت بناءً على القارئ
+  async function getAudio() {
+    const response = await axios.get(
+      `https://api.quran.com/api/v4/chapter_recitations/${numm}/${number}`
+    );
+    setAudio(response.data.audio_file.audio_url);
+  }
+
+  // التنقل بين السور
+  const handleNavigation = (direction) => {
+    const newNumber = parseInt(number) + direction;
+    if (newNumber >= 1 && newNumber <= 114) {
+      navigate(`/singlequran/${newNumber}`);
     }
-    const [numm, setnumm] = useState("1");
+  };
 
-    let num = [
-        "1","2","3","4","5","6","7","8","9","10","11","12","13","14","17","18","19","20","21","22","23","24","31","32","35","40","43","44","159","53","54","85","88","91","97","104","113","126","129","170",
-    ]
-    function handelnumChang(event){
-        const cityObject = num.find((nu)=>{
-          return nu == event.target.value;
-        })
-        setnumm(cityObject)
-    }
+  // تحديث البيانات عند تغيير رقم السورة أو القارئ
+  useEffect(() => {
+    getQuran();
+    getAudio();
+  }, [number, numm]);
 
-    const [audio, setAudio] = useState([]);
-    async function getAudio(){
-        const response = await axios.get(`https://api.quran.com/api/v4/chapter_recitations/${numm}/${number}`);
-        setAudio(response.data.audio_file.audio_url);
-    }
-    
-
-
-    
-
-
-    useEffect(()=>{
-        getQuran();
-        getAudio();
-      },[numm])
+  // جلب قائمة السور مرة واحدة عند تحميل الصفحة
+  useEffect(() => {
+    getSurahList();
+  }, []);
 
   return (
     <div className="ayaats">
-        <div className='ayat'>
-        <div className='start'>
-        <h3>عدد الايات :{info.numberOfAyahs}</h3>
-        <h3>{info.name}</h3>
-        <h3>رقم السوره :{info.number}</h3>
+      <div className="ayat">
+        <div className="start">
+          <h3>عدد الآيات: {info.numberOfAyahs}</h3>
+          <h3>اسم السورة: {info.name}</h3>
+          <h3>رقم السورة: {info.number}</h3>
         </div>
+
         <div className="audios">
-                <div className="select">
-                <select onChange={handelnumChang}>
-                    <option value="1">عبدالباسط مجود</option>
+          <div className="select">
+            <select onChange={(e) => setNumm(e.target.value)}>
+            <option value="1">عبدالباسط مجود</option>
                     <option value="2">عبدالباسط مرتل</option>
                     <option value="54">عبدالباسط ورش</option>
                     <option value="9">المنشاوي مرتل</option>
@@ -90,29 +102,52 @@ const SingleQuran = () => {
                     <option value="53">الهبدان</option>
                     <option value="65">حاتم فريد</option>
                     <option value="113">احمد الحذيفي</option>
-                </select>
-                </div>
-                <div className="ex">
-                    <Link to={`/explain/${number}`}><button>التفسير</button></Link>
-                </div>
-                <div className="audioo">
-                <audio src={audio} controls/>
-                </div>
+            </select>
+          </div>
+
+          <div className="ex">
+            <Link to={`/explain/${number}`}>
+              <button>التفسير</button>
+            </Link>
+          </div>
+
+          <div className="audioo">
+            <audio src={audio} controls />
+          </div>
         </div>
+
+        <div className="navigation">
+          <button onClick={() => handleNavigation(-1)} disabled={number <= 1}>
+            السورة السابقة
+          </button>
+          <select
+            onChange={(e) => navigate(`/singlequran/${e.target.value}`)}
+            value={number}
+          >
+            <option value="" hidden>
+              اختر السورة
+            </option>
+            {qur.map((item) => (
+              <option key={item.number} value={item.number}>
+                {item.name}
+              </option>
+            ))}
+          </select>
+          <button onClick={() => handleNavigation(1)} disabled={number >= 114}>
+            السورة التالية
+          </button>
+        </div>
+
         <div className="ayaat">
-        {data.map((aya) =>{
-            return(
-                <>
-                <div className="aya">
-                    <h2>{`(${aya.numberInSurah})${aya.text}`}</h2>
-                </div>
-                </>
-            )
-        })}
+          {data.map((aya) => (
+            <div key={aya.numberInSurah} className="aya">
+              <h2>{aya.text}</h2>
+              <h2 className="aya-num">{`(${aya.numberInSurah})`}</h2>
+            </div>
+          ))}
         </div>
-    </div>
+      </div>
     </div>
   );
-}
-
-export default SingleQuran;
+};
+export default SingleQuran; 

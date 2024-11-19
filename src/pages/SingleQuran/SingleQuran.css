@@ -79,6 +79,38 @@
     background-color: #f1f3f4;
     cursor: pointer;
 }
+
+.navigation{
+    background-color: green;
+    width: 70%;
+    padding: 10px 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px auto;
+    border-radius: 20px;
+}
+.navigation button{
+    width: 20%;
+    padding:15px 10px;
+    border:none;
+    border-radius: 20px;
+    font-size: 18px;
+    font-family: "Tajawal", system-ui;
+    cursor: pointer;
+}
+.navigation select{
+    width: 40%;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 18px;
+    font-family: "Tajawal", system-ui;
+    cursor: pointer;
+    outline: none;
+}
+.aya-num{
+    color: green;
+}
 .ex button{
     padding: 15px;
     width: 200px;
@@ -130,6 +162,37 @@
     .ex button{
         width: 100% !important;
     }
+    .navigation{
+        background-color: green;
+        width: 70%;
+        padding: 10px 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 10px auto;
+        border-radius: 20px;
+        flex-direction: column-reverse;
+    }
+    .navigation button{
+        width: 90%;
+        padding:15px 10px;
+        border:none;
+        border-radius: 20px;
+        font-size: 18px;
+        font-family: "Tajawal", system-ui;
+        cursor: pointer;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+    .navigation select{
+        width: 90%;
+        padding: 10px;
+        border-radius: 20px;
+        font-size: 18px;
+        font-family: "Tajawal", system-ui;
+        cursor: pointer;
+        outline: none;
+    }
 }
 @media screen and (min-width:481px) and (max-width:1024px){
     .ayaat{
@@ -160,5 +223,36 @@
     }
     .ex button{
         width: 100% !important;
+    }
+    .navigation{
+        background-color: green;
+        width: 70%;
+        padding: 10px 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 10px auto;
+        border-radius: 20px;
+        flex-direction: column-reverse;
+    }
+    .navigation button{
+        width: 90%;
+        padding:15px 10px;
+        border:none;
+        border-radius: 20px;
+        font-size: 18px;
+        font-family: "Tajawal", system-ui;
+        cursor: pointer;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+    .navigation select{
+        width: 90%;
+        padding: 10px;
+        border-radius: 20px;
+        font-size: 18px;
+        font-family: "Tajawal", system-ui;
+        cursor: pointer;
+        outline: none;
     }
 }
